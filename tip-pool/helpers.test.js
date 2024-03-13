@@ -25,6 +25,16 @@ describe("Helpers test (with setup and tear-down)", function() {
         });
     });
 
+    describe("Testing appendDeleteBtn(tr)", function() {
+        it('should append an X', function() {
+            let newTr = document.createElement('tr');
+            appendDeleteBtn(newTr);
+            serverTbody.append(newTr);
+
+            expect(newTr.querySelector("td").innerHTML).toEqual("X");
+        });
+    });
+
     afterEach(function() {
         allPayments = {};
         paymentId = 0;
